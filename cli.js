@@ -9,4 +9,4 @@ const input = process.argv.slice(2).reduce((flags, flag) => {
   }
 }, {});
 
-require("./dist/svelvg.es").createLibrary(input.glob, input);
+require("./dist/svelvg.umd").createLibrary(input.glob, input);
