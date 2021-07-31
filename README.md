@@ -33,6 +33,18 @@ By default, the output directory is `"lib"`. Customize the directory using the `
 npx svelvg glob=bootstrap-icons/icons outDir=dist
 ```
 
+Optionally, generate an index of icons (a list of all module names) by enabling the `iconIndex` flag. It will default to creating a `ICON_INDEX.md` file in your working directory.
+
+```sh
+npx svelvg glob=bootstrap-icons/icons iconIndex
+```
+
+Customize the icon index file name like so:
+
+```sh
+npx svelvg glob=bootstrap-icons/icons iconIndex=ICONS.md
+```
+
 ### Node.js
 
 Alternatively, install `svelvg` from NPM for programmatic usage.
@@ -52,6 +64,20 @@ const svelvg = require("svelvg");
   // Custom output directory
   await svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
 })();
+```
+
+### API
+
+#### Options
+
+```ts
+interface Options {
+  /** @default "lib" */
+  outDir: string;
+
+  /** @default false */
+  iconIndex: boolean | string;
+}
 ```
 
 ## License

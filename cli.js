@@ -5,7 +5,7 @@ const input = process.argv.slice(2).reduce((flags, flag) => {
 
   return {
     ...flags,
-    [key]: value
+    [key]: value === '' || value === 'true' ? true : value
   }
 }, {});
 

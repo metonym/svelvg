@@ -7,10 +7,21 @@ import { toModuleName } from "./to-module-name";
 interface Options {
   /** @default "lib" */
   outDir: string;
+
+  /** @default false */
+  iconIndex: boolean | string;
 }
 
 export async function createLibrary(glob: string, options: Partial<Options>) {
   const outDir = options?.outDir ?? "lib";
+
+  let iconIndex: boolean | string = false;
+
+  if (typeof options?.iconIndex === "string") {
+    iconIndex = options.iconIndex;
+  } else if (options?.iconIndex === true) {
+    iconIndex = "ICON_INDEX.md";
+  }
 
   let libPath = glob;
 
@@ -22,12 +33,12 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     libPath = path.join(libPath, "*.svg");
   }
 
-  const dir = path.parse(libPath).dir;
+  const libDir = path.parse(libPath).dir;
 
   try {
-    await fs.stat(dir);
+    await fs.stat(libDir);
   } catch (error) {
-    console.error(`[createLibrary] path does not exist: ${dir}`);
+    console.error(`[createLibrary] path does not exist: ${libDir}`);
     process.exit(1);
   }
 
@@ -61,6 +72,19 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
         )
         .join("")
     );
+
+    if (iconIndex) {
+      fs.writeFile(
+        path.join(process.cwd(), iconIndex),
+        `# Icon Index
+
+> ${moduleNames.length} total icons
+
+## Icons
+
+${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
+      );
+    }
   } catch (error) {
     console.error(error);
   }
