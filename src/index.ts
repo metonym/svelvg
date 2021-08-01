@@ -10,6 +10,15 @@ interface Options {
 
   /** @default false */
   iconIndex: boolean | string;
+
+  /**
+   * Callback to add a list of classes to the SVG element
+   * provided the original filename and module name
+   * @example
+   * filename: "alarm-fill"
+   * moduleName: "AlarmFill"
+   */
+  appendClassNames: (filename: string, moduleName: string) => string[];
 }
 
 export async function createLibrary(glob: string, options: Partial<Options>) {
@@ -53,8 +62,11 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
     for (const filename of files) {
       const source = await fs.readFile(filename, "utf-8");
-      const moduleName = toModuleName(path.parse(filename).name);
-      const svg = templateSvelte(source, filename);
+      const filenameNoExt = path.parse(filename).name;
+      const moduleName = toModuleName(filenameNoExt);
+      const classes =
+        options?.appendClassNames?.call(null, filenameNoExt, moduleName) ?? [];
+      const svg = templateSvelte(source, filename, { classes });
       const ts = templateTs(moduleName);
 
       fs.writeFile(path.join(dir, `${moduleName}.svelte`), svg);

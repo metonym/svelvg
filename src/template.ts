@@ -1,10 +1,16 @@
 import { parse, walk } from "svelte/compiler";
 
-export function templateSvelte(source: string, filename: string) {
+export function templateSvelte(
+  source: string,
+  filename: string,
+  { classes }: { classes: string[] }
+) {
   const ast = parse(source, { filename });
 
   let svg_attributes = "";
   let svg_children = "";
+
+  classes.forEach((name) => (svg_attributes += ` class:${name}={true}`));
 
   walk(ast.html, {
     enter(node: any) {

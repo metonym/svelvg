@@ -77,6 +77,15 @@ interface Options {
 
   /** @default false */
   iconIndex: boolean | string;
+
+  /**
+   * Callback to add a list of classes to the SVG element
+   * provided the original filename and module name
+   * @example
+   * filename: "alarm-fill"
+   * moduleName: "AlarmFill"
+   */
+  appendClassNames: (filename: string, moduleName: string) => string[];
 }
 ```
 
