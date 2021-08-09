@@ -85,6 +85,16 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
         .join("")
     );
 
+    fs.writeFile(
+      path.join(dir, "index.d.ts"),
+      moduleNames
+        .map(
+          (moduleName) =>
+            `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
+        )
+        .join("")
+    );
+
     if (iconIndex) {
       fs.writeFile(
         path.join(process.cwd(), iconIndex),
