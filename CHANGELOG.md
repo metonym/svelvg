@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - configure default width/height for the `svg` element
 - preprocessor to re-write icon imports
 - option to generate `METADATA.json`, which contains icon library info in JSON format
-- auto-generate README docs
+- auto-generate `README.md` docs
+- capitalize character following `_`
 
 ## [0.4.0](https://github.com/metonym/svelvg/releases/tag/v0.4.0) - 2021-08-28
 
