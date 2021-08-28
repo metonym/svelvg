@@ -89,6 +89,14 @@ interface Options {
 }
 ```
 
+## Template
+
+Scaffold a new project using the [template](template):
+
+```sh
+npx degit metonym/svelvg/template <folder-name>
+```
+
 ## License
 
 [MIT](LICENSE)
