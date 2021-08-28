@@ -20,8 +20,8 @@
     "rollup": "^2.56.3",
     "svelte": "^3.42.4",
     "svelte-check": "^2.2.4",
-    "svelte-readme": "^3.2.0",
-    "svelvg": "^0.3.1"
+    "svelte-readme": "^3.3.1",
+    "svelvg": "^0.4.0"
   },
   "repository": {
     "type": "git",

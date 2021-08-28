@@ -918,10 +918,10 @@ svelte-preprocess@^4.0.0:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
-svelte-readme@^3.2.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/svelte-readme/-/svelte-readme-3.3.0.tgz#48bfe8686f915e513fc1c8111e34f910c35b8649"
-  integrity sha512-vXT1QR/2csNbHCxv4GqO3q6V7wI2Q2cJT5C1Kcps7jE/JI3e2yc0hesafoyMNRH6R0MU6KV0hcW8oQ5Q+Akc0w==
+svelte-readme@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/svelte-readme/-/svelte-readme-3.3.1.tgz#b968c11d5c3eeb0983d1e6aa30b4adc6f4b3d5c0"
+  integrity sha512-lNHP6ZesEt5cW7PQB35uSfGWIiZ33MhUXQWhd1KEP645b0LzIWUSM3Oz2Fp81xngKlvRo4sIHTIeVM1CiJsmfw==
   dependencies:
     "@rollup/plugin-node-resolve" "^11.1.0"
     "@rollup/plugin-virtual" "^2.0.3"
@@ -948,10 +948,10 @@ svelte@^3.42.4:
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.42.4.tgz#838ed98fa7b26fc5fffe4df0d7ba345f1c54cf4f"
   integrity sha512-DqC0AmDdBrrbIA+Kzl3yhBb6qCn4vZOAfxye2pTnIpinLegyagC5sLI8Pe9GPlXu9VpHBXIwpDDedpMfu++epA==
 
-svelvg@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/svelvg/-/svelvg-0.3.1.tgz#d5af89e8c9d695612152bffb70e454a0683801a6"
-  integrity sha512-hOjS2pMQe/W3bD8LMqlY8E4UV3vuxndPnM4g8gDhGuR5Sqh0sQGSwtmhsvVGuPNaBTWmJfZjOcew46aE3wOfmA==
+svelvg@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/svelvg/-/svelvg-0.4.0.tgz#34e45f83e54f41eb44526fa05f82fb76c48deaf3"
+  integrity sha512-AQLyI/A7iqjesW4BlhkpGBm4wq9DnB6h+sM7geTylf7Cthnm4ggYUmUJjLeAakdIztbMqcjLVi5xK7WAbLA60w==
   dependencies:
     svelte "^3.42.1"
     tiny-glob "^0.2.9"
