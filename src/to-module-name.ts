@@ -1,6 +1,6 @@
 export function toModuleName(name: string) {
   return name
-    .replace(/\_+|-+/g, " ")
+    .replace(/\-+/g, " ")
     .replace(/\.svg/g, "")
     .split(" ")
     .map((_, i) => {

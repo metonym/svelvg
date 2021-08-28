@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - option to generate `METADATA.json`, which contains icon library info in JSON format
 - auto-generate README docs
 
+## [0.4.0](https://github.com/metonym/svelvg/releases/tag/v0.4.0) - 2021-08-28
+
+- preserve underscores (`_`) when generating the module name
+
 ## [0.3.2](https://github.com/metonym/svelvg/releases/tag/v0.3.2) - 2021-08-28
 
 - avoid duplicate module names in generated `lib/index.js`, `lib/index.d.ts`
