@@ -75,9 +75,11 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
       moduleNames.push(moduleName);
     }
 
+    const uniqueModuleNames = [...new Set(moduleNames)];
+
     fs.writeFile(
       path.join(dir, "index.js"),
-      moduleNames
+      uniqueModuleNames
         .map(
           (moduleName) =>
             `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
@@ -87,7 +89,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
     fs.writeFile(
       path.join(dir, "index.d.ts"),
-      moduleNames
+      uniqueModuleNames
         .map(
           (moduleName) =>
             `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
@@ -100,11 +102,11 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
         path.join(process.cwd(), iconIndex),
         `# Icon Index
 
-> ${moduleNames.length} total icons
+> ${uniqueModuleNames.length} total icons
 
 ## Icons
 
-${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
+${uniqueModuleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
       );
     }
   } catch (error) {
