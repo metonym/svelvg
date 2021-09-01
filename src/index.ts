@@ -109,6 +109,10 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 ${uniqueModuleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
       );
     }
+
+    console.log(
+      `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`
+    );
   } catch (error) {
     console.error(error);
   }
