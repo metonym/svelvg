@@ -54,7 +54,7 @@ Use the direct import for faster compiling during development.
 </script>
 ```
 
-## Rendering icons using `svelte:component`
+## Using `svelte:component`
 
 ```svelte
 <script>
