@@ -64,8 +64,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
       const source = await fs.readFile(filename, "utf-8");
       const filenameNoExt = path.parse(filename).name;
       const moduleName = toModuleName(filenameNoExt);
-      const classes =
-        options?.appendClassNames?.call(null, filenameNoExt, moduleName) ?? [];
+      const classes = options?.appendClassNames?.call(null, filenameNoExt, moduleName) ?? [];
       const svg = templateSvelte(source, filename, { classes });
       const ts = templateTs(moduleName);
 
@@ -76,26 +75,12 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     }
 
     const uniqueModuleNames = [...new Set(moduleNames)];
+    const index = uniqueModuleNames
+      .map((moduleName) => `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`)
+      .join("");
 
-    fs.writeFile(
-      path.join(dir, "index.js"),
-      uniqueModuleNames
-        .map(
-          (moduleName) =>
-            `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
-        )
-        .join("")
-    );
-
-    fs.writeFile(
-      path.join(dir, "index.d.ts"),
-      uniqueModuleNames
-        .map(
-          (moduleName) =>
-            `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
-        )
-        .join("")
-    );
+    fs.writeFile(path.join(dir, "index.js"), index);
+    fs.writeFile(path.join(dir, "index.d.ts"), index);
 
     if (iconIndex) {
       fs.writeFile(
@@ -110,9 +95,7 @@ ${uniqueModuleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
       );
     }
 
-    console.log(
-      `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`
-    );
+    console.log(`⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`);
   } catch (error) {
     console.error(error);
   }
