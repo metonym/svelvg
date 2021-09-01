@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - auto-generate `README.md` docs
 - capitalize character following `_`
 
+## [0.5.0](https://github.com/metonym/svelvg/releases/tag/v0.5.0) - 2021-08-31
+
+- emit success message when creating a library
+
 ## [0.4.0](https://github.com/metonym/svelvg/releases/tag/v0.4.0) - 2021-08-28
 
 - preserve underscores (`_`) when generating the module name
