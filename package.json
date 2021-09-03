@@ -14,8 +14,9 @@
     }
   },
   "scripts": {
-    "dev": "vite build --watch",
-    "prepack": "vite build && tsc"
+    "dev": "vite",
+    "build": "vite build",
+    "prepack": "vite build --config vite.lib.config.js && tsc"
   },
   "dependencies": {
     "svelte": "^3.42.4",
