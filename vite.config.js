@@ -6,9 +6,8 @@ const ENV_VARS = {
   IS_PULL_REQUEST: false,
   RENDER_GIT_BRANCH: "",
   RENDER_GIT_COMMIT: "",
+  RENDER_GIT_REPO_SLUG: "",
 };
-
-console.log(process.env)
 
 const replace = {
   name: "replace",

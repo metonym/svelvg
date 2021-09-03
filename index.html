@@ -13,9 +13,11 @@
 
       if ("IS_PULL_REQUEST" === "true") {
         app.append("Pull request");
-        app.append("RENDER_GIT_BRANCH");
-        app.append("RENDER_GIT_BRANCH");
-        app.append("RENDER_GIT_COMMIT");
+        app.innerHTML += "<br>";
+        app.append("git branch: RENDER_GIT_BRANCH");
+        app.innerHTML += "<br>";
+        app.append("git commit: ");
+        app.innerHTML += `<a href="https://github.com/RENDER_GIT_REPO_SLUG/commit/RENDER_GIT_COMMIT">RENDER_GIT_COMMIT</a>`;
       }
 
       const templateSvelteTestCases = [
