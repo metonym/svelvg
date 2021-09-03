@@ -1,11 +1,24 @@
+/**
+ * @typedef {any} DefaultValue
+ * @type {Record<string, DefaultValue>}
+ */
+const ENV_VARS = {
+  IS_PULL_REQUEST: false,
+  RENDER_GIT_BRANCH: "",
+  RENDER_GIT_COMMIT: "",
+};
+
+console.log(process.env)
+
 const replace = {
   name: "replace",
   transform(code, id) {
     if (/index.html/.test(id)) {
-      return code.replace(
-        /IS_PULL_REQUEST/g,
-        process.env.IS_PULL_REQUEST || false
-      );
+      Object.entries(ENV_VARS).forEach(([key, value]) => {
+        code = code.replace(new RegExp(key, "g"), process.env[key] || value);
+      });
+
+      return code;
     }
   },
 };
