@@ -11,6 +11,10 @@
 
       const app = document.getElementById("app");
 
+      if ("IS_PULL_REQUEST" === "true") {
+        app.append("Pull request");
+      }
+
       const templateSvelteTestCases = [
         {
           name: "Element only",
@@ -28,7 +32,7 @@
           name: "With classes",
           source: `<svg id="id" class="class"><title>Title</title></svg>`,
           filename: undefined,
-          classes: ['my-class'],
+          classes: ["my-class"],
         },
       ];
 
