@@ -15,11 +15,7 @@ interface NodeElement extends Position {
   }[];
 }
 
-export function templateSvelte(
-  source: string,
-  filename: string,
-  { classes }: { classes: string[] }
-) {
+export function templateSvelte(source: string, filename: string, { classes }: { classes: string[] }) {
   const ast = parse(source, { filename });
 
   let svg_attributes = "";
