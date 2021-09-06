@@ -82,6 +82,8 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     fs.writeFile(path.join(dir, "index.js"), index);
     fs.writeFile(path.join(dir, "index.d.ts"), index);
 
+    console.log(`⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`);
+
     if (iconIndex) {
       fs.writeFile(
         path.join(process.cwd(), iconIndex),
@@ -93,9 +95,9 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
 ${uniqueModuleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
       );
-    }
 
-    console.log(`⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`);
+      console.log(`✏️ Wrote icon index to "${iconIndex}"`);
+    }
   } catch (error) {
     console.error(error);
   }
