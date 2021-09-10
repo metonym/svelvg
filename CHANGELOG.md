@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - auto-generate `README.md` docs
 - capitalize character following `_`
 
+## [0.6.0](https://github.com/metonym/svelvg/releases/tag/v0.6.0) - 2021-09-09
+
+- glob for `*.svg` should account for nested folders `**/*.svg`
+- emit success message creating the icon index
+
 ## [0.5.0](https://github.com/metonym/svelvg/releases/tag/v0.5.0) - 2021-08-31
 
 - emit success message when creating a library
