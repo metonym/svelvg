@@ -57,7 +57,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     await fs.rmdir(dir, { recursive: true });
     await fs.mkdir(dir);
 
-    const files = await tg(libPath);
+    const files = await tg(libPath.replace(/\*.svg$/, "**/*.svg"));
     const moduleNames: string[] = [];
 
     for (const filename of files) {
