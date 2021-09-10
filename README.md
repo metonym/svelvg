@@ -4,12 +4,12 @@
 
 > Successor to [svg-to-svelte](https://github.com/metonym/svg-to-svelte)
 
-This library transforms SVG files into Svelte components and does the following:
+This library transforms SVG files into Svelte components through the following:
 
-- converts the `svg` file name into a JavaScript-compatible module name (e.g., `alarm-fill` --> `AlarmFill`)
-- forwards `$$restProps` to the `svg` element while preserving original `svg` attributes
-- adds a default `slot` as child element to `svg`
-- generates a corresponding TypeScript definition
+- convert the `svg` file name into a JavaScript-compatible module name (e.g., `alarm-fill` --> `AlarmFill`)
+- forward `$$restProps` to the `svg` element while preserving attributes from the original `svg`
+- add a default `slot` as child element to `svg`
+- generate a TypeScript definition by extending the `SvelteComponentTyped` interface
 
 ## Usage
 
