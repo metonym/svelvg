@@ -19,6 +19,11 @@ interface Options {
    * moduleName: "AlarmFill"
    */
   appendClassNames: (filename: string, moduleName: string) => string[];
+
+  /**
+   * Override the default module name
+   */
+  toModuleName: (params: { path: path.ParsedPath; moduleName: string }) => string;
 }
 
 export async function createLibrary(glob: string, options: Partial<Options>) {
@@ -62,9 +67,13 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
     for (const filename of files) {
       const source = await fs.readFile(filename, "utf-8");
-      const filenameNoExt = path.parse(filename).name;
-      const moduleName = toModuleName(filenameNoExt);
-      const classes = options?.appendClassNames?.call(null, filenameNoExt, moduleName) ?? [];
+      const parsedPath = path.parse(filename);
+
+      let moduleName = toModuleName(parsedPath.name);
+
+      if (options?.toModuleName) moduleName = options.toModuleName({ path: parsedPath, moduleName });
+
+      const classes = options?.appendClassNames?.call(null, parsedPath.name, moduleName) ?? [];
       const svg = templateSvelte(source, filename, { classes });
       const ts = templateTs(moduleName);
 

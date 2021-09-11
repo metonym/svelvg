@@ -47,11 +47,17 @@ npx svelvg glob=bootstrap-icons/icons iconIndex=ICONS.md
 
 ### Node.js
 
-Alternatively, install `svelvg` from NPM for programmatic usage.
+Alternatively, install `svelvg` from NPM to use it programmatically.
+
+**Yarn**
 
 ```sh
 yarn add -D svelvg
-# OR
+```
+
+**NPM**
+
+```sh
 npm i -D svelvg
 ```
 
@@ -59,9 +65,10 @@ npm i -D svelvg
 const svelvg = require("svelvg");
 
 (async () => {
+  // Emits components to the `lib` folder
   await svelvg.createLibrary("bootstrap-icons/icons");
 
-  // Custom output directory
+  // Customize the output directory to be `dist`
   await svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
 })();
 ```
@@ -86,6 +93,11 @@ interface Options {
    * moduleName: "AlarmFill"
    */
   appendClassNames: (filename: string, moduleName: string) => string[];
+
+  /**
+   * Override the default module name
+   */
+  toModuleName: (params: { path: path.ParsedPath; moduleName: string }) => string;
 }
 ```
 
