@@ -12,7 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - preprocessor to re-write icon imports
 - option to generate `METADATA.json`, which contains icon library info in JSON format
 - auto-generate `README.md` docs
-- capitalize character following `_`
+- capitalize character following `_`?
+- verbose: print out icon names
+
+## [0.7.0](https://github.com/metonym/svelvg/releases/tag/v0.7.0) - 2021-09-11
+
+- add `toModuleName` callback to `createLibrary` options to override the default module name
+- prefix module name if begins with !
 
 ## [0.6.0](https://github.com/metonym/svelvg/releases/tag/v0.6.0) - 2021-09-09
 
