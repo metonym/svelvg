@@ -18,11 +18,11 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
-    "rollup": "^2.56.3",
-    "svelte": "^3.42.4",
-    "svelte-check": "^2.2.4",
-    "svelte-readme": "^3.3.1",
-    "svelvg": "^0.4.0"
+    "rollup": "^2.60.0",
+    "svelte": "^3.44.2",
+    "svelte-check": "^2.2.10",
+    "svelte-readme": "^3.6.1",
+    "svelvg": "^0.7.0"
   },
   "repository": {
     "type": "git",
