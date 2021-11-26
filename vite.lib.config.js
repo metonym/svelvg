@@ -1,4 +1,9 @@
-import pkg from "./package.json";
+import fs from "fs";
+
+const pkg = JSON.parse(
+  fs.readFileSync(new URL("./package.json", import.meta.url), "utf8")
+);
+const { name, dependencies } = pkg;
 
 const globals = {
   path: "path",
@@ -8,9 +13,9 @@ const globals = {
 
 export default {
   build: {
-    lib: { entry: "src", name: pkg.name },
+    lib: { entry: "src", name },
     rollupOptions: {
-      external: [...Object.keys(pkg.dependencies), ...Object.keys(globals)],
+      external: [...Object.keys(dependencies), ...Object.keys(globals)],
       output: {
         globals
       },

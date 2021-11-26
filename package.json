@@ -7,6 +7,7 @@
   "main": "./dist/svelvg.umd.js",
   "module": "./dist/svelvg.es.js",
   "types": "./dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/svelvg.es.js",
