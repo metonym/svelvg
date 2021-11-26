@@ -13,6 +13,8 @@ This library transforms SVG files into Svelte components through the following:
 
 ## Usage
 
+This library requires `"type": "module"` in your `package.json`.
+
 ### CLI
 
 The easiest way to use this library is through [npx](https://nodejs.dev/learn/the-npx-nodejs-package-runner).
@@ -61,16 +63,22 @@ yarn add -D svelvg
 npm i -D svelvg
 ```
 
+**pnpm**
+
+```sh
+pnpm i -D svelvg
+```
+
+Note that the top-level await requires Node.js v14 or greater.
+
 ```js
-const svelvg = require("svelvg");
+import svelvg from "svelvg";
 
-(async () => {
-  // Emits components to the `lib` folder
-  await svelvg.createLibrary("bootstrap-icons/icons");
+// Emits components to the `lib` folder
+await svelvg.createLibrary("bootstrap-icons/icons");
 
-  // Customize the output directory to be `dist`
-  await svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
-})();
+// Customize the output directory to be `dist`
+await svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
 ```
 
 ### API
