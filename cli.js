@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+import { createLibrary } from "svelvg";
+
+/**
+ * @type {Record<string, string>}
+ */
 const input = process.argv.slice(2).reduce((flags, flag) => {
   const [key, value] = flag.split("=");
 
@@ -9,4 +14,4 @@ const input = process.argv.slice(2).reduce((flags, flag) => {
   };
 }, {});
 
-require("./dist/svelvg.umd").createLibrary(input.glob, input);
+createLibrary(input.glob, input);
