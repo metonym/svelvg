@@ -18,7 +18,7 @@ interface Options {
    * filename: "alarm-fill"
    * moduleName: "AlarmFill"
    */
-  appendClassNames: (filename: string, moduleName: string) => string[];
+  appendClassNames: (filename: string, moduleName: string) => undefined | string[];
 
   /**
    * Override the default module name
