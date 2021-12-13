@@ -2,6 +2,6 @@ services:
   - type: web
     name: svelvg
     env: static
-    buildCommand: yarn build
+    buildCommand: yarn; yarn build
     staticPublishPath: public
     pullRequestPreviewsEnabled: true
