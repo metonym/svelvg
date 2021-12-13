@@ -26,6 +26,12 @@ yarn add -D npm-name
 npm i -D npm-name
 ```
 
+**pnpm**
+
+```bash
+pnpm i -D npm-name
+```
+
 ## Usage
 
 ### Basic
