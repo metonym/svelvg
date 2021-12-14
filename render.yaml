@@ -4,5 +4,5 @@ services:
     env: static
     buildCommand: yarn; yarn build
     staticPublishPath: public
-    pullRequestPreviewsEnabled: true
-    autoDeploy: false
+    pullRequestPreviewsEnabled: false
+    autoDeploy: true
