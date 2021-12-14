@@ -1,5 +1,6 @@
 import tg from "tiny-glob";
 import fs from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
 import { templateSvelte, templateTs } from "./template";
 import { toModuleName } from "./to-module-name";
@@ -59,7 +60,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
   try {
     const dir = path.join(process.cwd(), outDir);
 
-    if (await fs.stat(dir)) {
+    if (existsSync(dir)) {
       await fs.rmdir(dir, { recursive: true });
     }
     await fs.mkdir(dir);
