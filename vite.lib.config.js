@@ -8,6 +8,7 @@ const { name, dependencies } = pkg;
 const globals = {
   path: "path",
   "fs/promises": "fs",
+  "fs": "existsSync",
   "tiny-glob": "glob",
 }
 
