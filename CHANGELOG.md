@@ -15,7 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - capitalize character following `_`?
 - verbose: print out icon names
 
-## [0.8.2](https://github.com/metonym/svelvg/releases/tag/v0.8.2) - 2021-12-14'
+## [0.8.3](https://github.com/metonym/svelvg/releases/tag/v0.8.3) - 2021-12-14
+
+- use `fs.existsSync` method to check if `outDir` exists
+
+## [0.8.2](https://github.com/metonym/svelvg/releases/tag/v0.8.2) - 2021-12-14
 
 - check if `outDir` folder exists before removing it
 
