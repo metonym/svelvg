@@ -5,3 +5,4 @@ services:
     buildCommand: yarn; yarn build
     staticPublishPath: public
     pullRequestPreviewsEnabled: true
+    autoDeploy: false
