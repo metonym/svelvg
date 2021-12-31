@@ -61,7 +61,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     const dir = path.join(process.cwd(), outDir);
 
     if (existsSync(dir)) {
-      await fs.rmdir(dir, { recursive: true });
+      await fs.rm(dir, { recursive: true });
     }
     await fs.mkdir(dir);
 
