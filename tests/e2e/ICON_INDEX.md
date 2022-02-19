@@ -1,9 +1,10 @@
 # Icon Index
 
-> 1370 total icons
+> 1371 total icons
 
 ## Icons
 
+- A1
 - AlarmFill
 - Alarm
 - AlignBottom
@@ -1374,4 +1375,3 @@
 - Youtube
 - ZoomIn
 - ZoomOut
-

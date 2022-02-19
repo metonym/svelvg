@@ -1,5 +1,5 @@
-export function toModuleName(name: string) {
-  return name
+export const toModuleName = (name: string) =>
+  name
     .replace(/\-+/g, " ")
     .replace(/\.svg/g, "")
     .split(" ")
@@ -13,4 +13,3 @@ export function toModuleName(name: string) {
       return first_char.toUpperCase() + _.slice(1);
     })
     .join("");
-}

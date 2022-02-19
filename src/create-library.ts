@@ -5,7 +5,7 @@ import path from "path";
 import { templateSvelte, templateTs } from "./template";
 import { toModuleName } from "./to-module-name";
 
-interface Options {
+interface CreateLibraryOptions {
   /** @default "lib" */
   outDir: string;
 
@@ -19,15 +19,42 @@ interface Options {
    * filename: "alarm-fill"
    * moduleName: "AlarmFill"
    */
-  appendClassNames: (filename: string, moduleName: string) => undefined | string[];
+  appendClassNames: (
+    filename: string,
+    moduleName: string
+  ) => undefined | string[];
 
   /**
    * Override the default module name
    */
-  toModuleName: (params: { path: path.ParsedPath; moduleName: string }) => string;
+  toModuleName: (params: {
+    path: path.ParsedPath;
+    moduleName: string;
+  }) => string;
 }
 
-export async function createLibrary(glob: string, options: Partial<Options>) {
+type ModuleNames = string[];
+
+export const createIndexFile = (moduleNames: ModuleNames) =>
+  moduleNames
+    .map(
+      (moduleName) =>
+        `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
+    )
+    .join("");
+
+export const createIconIndex = (moduleNames: ModuleNames) => `# Icon Index
+
+> ${moduleNames.length} total icons
+
+## Icons
+
+${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}`;
+
+export async function createLibrary(
+  glob: string,
+  options: Partial<CreateLibraryOptions>
+) {
   const outDir = options?.outDir ?? "lib";
 
   let iconIndex: boolean | string = false;
@@ -66,7 +93,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     await fs.mkdir(dir);
 
     const files = await tg(libPath.replace(/\*.svg$/, "**/*.svg"));
-    const moduleNames: string[] = [];
+    const moduleNames: ModuleNames = [];
 
     for (const filename of files) {
       const source = await fs.readFile(filename, "utf-8");
@@ -74,38 +101,40 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
       let moduleName = toModuleName(parsedPath.name);
 
-      if (options?.toModuleName) moduleName = options.toModuleName({ path: parsedPath, moduleName });
+      if (options?.toModuleName) {
+        moduleName = options.toModuleName({ path: parsedPath, moduleName });
+      }
 
-      const classes = options?.appendClassNames?.call(null, parsedPath.name, moduleName) ?? [];
-      const svg = templateSvelte(source, filename, { classes });
-      const ts = templateTs(moduleName);
+      const classes =
+        options?.appendClassNames?.call(null, parsedPath.name, moduleName) ??
+        [];
 
-      fs.writeFile(path.join(dir, `${moduleName}.svelte`), svg);
-      fs.writeFile(path.join(dir, `${moduleName}.svelte.d.ts`), ts);
+      fs.writeFile(
+        path.join(dir, `${moduleName}.svelte`),
+        templateSvelte(source, filename, { classes })
+      );
+      fs.writeFile(
+        path.join(dir, `${moduleName}.svelte.d.ts`),
+        templateTs(moduleName)
+      );
 
       moduleNames.push(moduleName);
     }
 
     const uniqueModuleNames = [...new Set(moduleNames)];
-    const index = uniqueModuleNames
-      .map((moduleName) => `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`)
-      .join("");
+    const index = createIndexFile(uniqueModuleNames);
 
     fs.writeFile(path.join(dir, "index.js"), index);
     fs.writeFile(path.join(dir, "index.d.ts"), index);
 
-    console.log(`⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`);
+    console.log(
+      `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`
+    );
 
     if (iconIndex) {
       fs.writeFile(
         path.join(process.cwd(), iconIndex),
-        `# Icon Index
-
-> ${uniqueModuleNames.length} total icons
-
-## Icons
-
-${uniqueModuleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
+        createIconIndex(uniqueModuleNames)
       );
 
       console.log(`✏️ Wrote icon index to "${iconIndex}"`);
