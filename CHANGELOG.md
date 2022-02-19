@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+<!--
 ## Unreleased
 
 - support multiple glob paths
@@ -13,7 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - option to generate `METADATA.json`, which contains icon library info in JSON format
 - auto-generate `README.md` docs
 - capitalize character following `_`?
-- verbose: print out icon names
+- verbose: print out icon names -->
+
+## [0.9.0](https://github.com/metonym/svelvg/releases/tag/v0.9.0) - 2022-02-19
+
+- switch library format to CJS only
+- rename `Options` interface to `CreateLibraryOptions`
+- omit trailing line break in generated icon index file
 
 ## [0.8.4](https://github.com/metonym/svelvg/releases/tag/v0.8.4) - 2021-12-31
 
