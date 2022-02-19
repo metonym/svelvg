@@ -9,15 +9,14 @@
   "types": "./lib/index.d.ts",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "deploy": "vite",
+    "dev": "vite",
+    "build": "vite build",
     "prepack": "svelvg glob=bootstrap-icons/icons iconIndex",
     "test": "vitest"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "next",
     "bootstrap-icons": "^1.8.1",
-    "gh-pages": "^3.2.3",
     "svelvg": "^0.9.0",
     "vite-plugin-gh-pages": "^0.1.0",
     "vitest": "^0.4.2"
