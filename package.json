@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "tsc -w",
     "prepack": "tsc",
+    "test": "vitest -r tests",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -18,7 +19,8 @@
   "devDependencies": {
     "@types/node": "^17.0.18",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "vitest": "^0.4.2"
   },
   "repository": {
     "type": "git",
