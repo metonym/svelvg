@@ -49,7 +49,7 @@ export const createIconIndex = (moduleNames: ModuleNames) => `# Icon Index
 
 ## Icons
 
-${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`;
+${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}`;
 
 export async function createLibrary(
   glob: string,
