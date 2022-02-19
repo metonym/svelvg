@@ -3,13 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>npm-name</title>
   </head>
   <body>
+    <div id="svelte"></div>
     <script type="module">
-      import App from "./tests/Icons.test.svelte";
+      import IconLibrary from "svelvg/lib/IconLibrary.svelte";
+      import * as icons from "./lib";
+      import pkg from "./package.json";
 
-      const app = new App({ target: document.body });
+      const app = new IconLibrary({
+        target: document.getElementById("svelte"),
+        props: {
+          pkg,
+          icons,
+        },
+      });
     </script>
   </body>
 </html>
