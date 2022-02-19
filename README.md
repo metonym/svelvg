@@ -6,14 +6,12 @@
 
 This library transforms SVG files into Svelte components through the following:
 
-- convert the `svg` file name into a JavaScript-compatible module name (e.g., `alarm-fill` --> `AlarmFill`)
+- convert the `svg` file name into a valid module name (e.g., `alarm-fill` --> `AlarmFill`)
 - forward `$$restProps` to the `svg` element while preserving attributes from the original `svg`
 - add a default `slot` as child element to `svg`
 - generate a TypeScript definition by extending the `SvelteComponentTyped` interface
 
 ## Usage
-
-This library requires `"type": "module"` in your `package.json`.
 
 ### CLI
 
@@ -21,9 +19,7 @@ The easiest way to use this library is through [npx](https://nodejs.dev/learn/th
 
 The `glob` value represents the relative path to the folder containing SVG files inside `node_modules/`.
 
-For example, say you have [bootstrap-icons](https://github.com/twbs/icons) installed as a development dependency. The library contains icon SVG files in the "icons" folder.
-
-You could therefore run the following command to generate Svelte components:
+For example, say you have [bootstrap-icons](https://github.com/twbs/icons) installed as a development dependency, which contains icon SVG files in the "icons" folder.
 
 ```sh
 npx svelvg glob=bootstrap-icons/icons
@@ -51,42 +47,35 @@ npx svelvg glob=bootstrap-icons/icons iconIndex=ICONS.md
 
 Alternatively, install `svelvg` from NPM to use it programmatically.
 
-**Yarn**
-
 ```sh
+# Yarn
 yarn add -D svelvg
-```
 
-**NPM**
-
-```sh
+# NPM
 npm i -D svelvg
-```
 
-**pnpm**
-
-```sh
+# pnpm
 pnpm i -D svelvg
 ```
 
 Note that the top-level await requires Node.js v14 or greater.
 
 ```js
-import svelvg from "svelvg";
+const svelvg = require("svelvg");
 
 // Emits components to the `lib` folder
-await svelvg.createLibrary("bootstrap-icons/icons");
+svelvg.createLibrary("bootstrap-icons/icons");
 
 // Customize the output directory to be `dist`
-await svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
+svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
 ```
 
 ### API
 
-#### Options
+#### `createLibrary`
 
 ```ts
-interface Options {
+interface CreateLibraryOptions {
   /** @default "lib" */
   outDir: string;
 

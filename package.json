@@ -13,7 +13,7 @@
     "dev": "tsc -w",
     "prepack": "tsc",
     "test": "vitest -r tests",
-    "format": "prettier --write ."
+    "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
     "svelte": "^3.46.4",
