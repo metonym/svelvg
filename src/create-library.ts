@@ -5,7 +5,7 @@ import path from "path";
 import { templateSvelte, templateTs } from "./template";
 import { toModuleName } from "./to-module-name";
 
-interface Options {
+interface CreateLibraryOptions {
   /** @default "lib" */
   outDir: string;
 
@@ -51,7 +51,10 @@ export const createIconIndex = (moduleNames: ModuleNames) => `# Icon Index
 
 ${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`;
 
-export async function createLibrary(glob: string, options: Partial<Options>) {
+export async function createLibrary(
+  glob: string,
+  options: Partial<CreateLibraryOptions>
+) {
   const outDir = options?.outDir ?? "lib";
 
   let iconIndex: boolean | string = false;
