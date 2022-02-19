@@ -9,21 +9,17 @@
   "types": "./lib/index.d.ts",
   "type": "module",
   "scripts": {
-    "dev": "rollup -cw",
-    "predeploy": "rollup -c",
-    "deploy": "gh-pages -d dist",
-    "prepack": "svelvg glob=<path> iconIndex",
-    "check": "svelte-check --workspace tests",
+    "dev": "vite dev",
+    "deploy": "vite",
+    "prepack": "svelvg glob=bootstrap-icons/icons iconIndex",
     "test": "vitest"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "next",
+    "bootstrap-icons": "^1.8.1",
     "gh-pages": "^3.2.3",
-    "rollup": "^2.67.3",
-    "svelte": "^3.46.4",
-    "svelte-check": "^2.4.5",
-    "svelte-readme": "^3.6.2",
-    "svelvg": "^0.8.4",
+    "svelvg": "^0.9.0",
+    "vite-plugin-gh-pages": "^0.1.0",
     "vitest": "^0.4.2"
   },
   "repository": {

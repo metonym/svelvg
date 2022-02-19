@@ -14,22 +14,16 @@
 
 ## Installation
 
-**Yarn**
-
 ```bash
+# Yarn
 yarn add -D npm-name
-```
 
-**NPM**
-
-```bash
+# NPM
 npm i -D npm-name
-```
 
-**pnpm**
-
-```bash
+# pnpm
 pnpm i -D npm-name
+
 ```
 
 ## Usage
