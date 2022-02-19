@@ -11,7 +11,9 @@
   $: filtered =
     value.trim().length > 0
       ? entries.filter(([icon]) =>
-          icon.toLowerCase().includes(value.toLowerCase())
+          icon
+            .toLowerCase()
+            .includes(value.toLowerCase().replace(/(\s+|-)/, ""))
         )
       : entries;
 </script>
