@@ -33,6 +33,24 @@ interface Options {
   }) => string;
 }
 
+type ModuleNames = string[];
+
+export const createIndexFile = (moduleNames: ModuleNames) =>
+  moduleNames
+    .map(
+      (moduleName) =>
+        `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
+    )
+    .join("");
+
+export const createIconIndex = (moduleNames: ModuleNames) => `# Icon Index
+
+> ${moduleNames.length} total icons
+
+## Icons
+
+${moduleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`;
+
 export async function createLibrary(glob: string, options: Partial<Options>) {
   const outDir = options?.outDir ?? "lib";
 
@@ -72,7 +90,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     await fs.mkdir(dir);
 
     const files = await tg(libPath.replace(/\*.svg$/, "**/*.svg"));
-    const moduleNames: string[] = [];
+    const moduleNames: ModuleNames = [];
 
     for (const filename of files) {
       const source = await fs.readFile(filename, "utf-8");
@@ -80,28 +98,28 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
       let moduleName = toModuleName(parsedPath.name);
 
-      if (options?.toModuleName)
+      if (options?.toModuleName) {
         moduleName = options.toModuleName({ path: parsedPath, moduleName });
+      }
 
       const classes =
         options?.appendClassNames?.call(null, parsedPath.name, moduleName) ??
         [];
-      const svg = templateSvelte(source, filename, { classes });
-      const ts = templateTs(moduleName);
 
-      fs.writeFile(path.join(dir, `${moduleName}.svelte`), svg);
-      fs.writeFile(path.join(dir, `${moduleName}.svelte.d.ts`), ts);
+      fs.writeFile(
+        path.join(dir, `${moduleName}.svelte`),
+        templateSvelte(source, filename, { classes })
+      );
+      fs.writeFile(
+        path.join(dir, `${moduleName}.svelte.d.ts`),
+        templateTs(moduleName)
+      );
 
       moduleNames.push(moduleName);
     }
 
     const uniqueModuleNames = [...new Set(moduleNames)];
-    const index = uniqueModuleNames
-      .map(
-        (moduleName) =>
-          `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
-      )
-      .join("");
+    const index = createIndexFile(uniqueModuleNames);
 
     fs.writeFile(path.join(dir, "index.js"), index);
     fs.writeFile(path.join(dir, "index.d.ts"), index);
@@ -113,13 +131,7 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
     if (iconIndex) {
       fs.writeFile(
         path.join(process.cwd(), iconIndex),
-        `# Icon Index
-
-> ${uniqueModuleNames.length} total icons
-
-## Icons
-
-${uniqueModuleNames.map((moduleName) => `- ${moduleName}\n`).join("")}\n`
+        createIconIndex(uniqueModuleNames)
       );
 
       console.log(`✏️ Wrote icon index to "${iconIndex}"`);

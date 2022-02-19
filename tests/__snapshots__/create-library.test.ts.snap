@@ -1,0 +1,20 @@
+// Vitest Snapshot v1
+
+exports[`createIconIndex 1`] = `
+"# Icon Index
+
+> 2 total icons
+
+## Icons
+
+- OneTwoThree
+- TwoThreeFour
+
+"
+`;
+
+exports[`createIndexFile 1`] = `
+"export { default as OneTwoThree } from \\"./OneTwoThree.svelte\\";
+export { default as TwoThreeFour } from \\"./TwoThreeFour.svelte\\";
+"
+`;

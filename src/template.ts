@@ -15,11 +15,11 @@ interface NodeElement extends Position {
   }[];
 }
 
-export function templateSvelte(
+export const templateSvelte = (
   source: string,
   filename: string,
   { classes }: { classes: string[] }
-) {
+) => {
   const ast = parse(source, { filename });
 
   let svg_attributes = "";
@@ -48,10 +48,11 @@ export function templateSvelte(
   });
 
   return `<svg${svg_attributes} {...$$restProps}><slot />${svg_children.trim()}</svg>`;
-}
+};
 
-export function templateTs(moduleName: string) {
-  return `/// <reference types="svelte" />
+export const templateTs = (
+  moduleName: string
+) => `/// <reference types="svelte" />
 import { SvelteComponentTyped } from "svelte";
 
 export interface ${moduleName}Props
@@ -63,4 +64,3 @@ export default class ${moduleName} extends SvelteComponentTyped<
   { default: {} }
 > {}
 `;
-}
