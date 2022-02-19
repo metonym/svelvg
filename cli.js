@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import { createLibrary } from "svelvg";
-
 /**
  * @type {Record<string, string>}
  */
@@ -14,4 +12,4 @@ const input = process.argv.slice(2).reduce((flags, flag) => {
   };
 }, {});
 
-createLibrary(input.glob, input);
+require("./dist").createLibrary(input.glob, input);
