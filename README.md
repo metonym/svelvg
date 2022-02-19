@@ -105,7 +105,10 @@ interface Options {
   /**
    * Override the default module name
    */
-  toModuleName: (params: { path: path.ParsedPath; moduleName: string }) => string;
+  toModuleName: (params: {
+    path: path.ParsedPath;
+    moduleName: string;
+  }) => string;
 }
 ```
 

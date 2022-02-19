@@ -6,6 +6,9 @@
   "author": "Eric Liu (https://github.com/metonym)",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "svelvg": "./cli.js"
+  },
   "scripts": {
     "dev": "tsc -w",
     "prepack": "tsc",
@@ -35,11 +38,5 @@
   "files": [
     "dist",
     "cli.js"
-  ],
-  "bin": {
-    "svelvg": "./cli.js"
-  },
-  "prettier": {
-    "printWidth": 120
-  }
+  ]
 }

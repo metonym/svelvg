@@ -19,12 +19,18 @@ interface Options {
    * filename: "alarm-fill"
    * moduleName: "AlarmFill"
    */
-  appendClassNames: (filename: string, moduleName: string) => undefined | string[];
+  appendClassNames: (
+    filename: string,
+    moduleName: string
+  ) => undefined | string[];
 
   /**
    * Override the default module name
    */
-  toModuleName: (params: { path: path.ParsedPath; moduleName: string }) => string;
+  toModuleName: (params: {
+    path: path.ParsedPath;
+    moduleName: string;
+  }) => string;
 }
 
 export async function createLibrary(glob: string, options: Partial<Options>) {
@@ -74,9 +80,12 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
       let moduleName = toModuleName(parsedPath.name);
 
-      if (options?.toModuleName) moduleName = options.toModuleName({ path: parsedPath, moduleName });
+      if (options?.toModuleName)
+        moduleName = options.toModuleName({ path: parsedPath, moduleName });
 
-      const classes = options?.appendClassNames?.call(null, parsedPath.name, moduleName) ?? [];
+      const classes =
+        options?.appendClassNames?.call(null, parsedPath.name, moduleName) ??
+        [];
       const svg = templateSvelte(source, filename, { classes });
       const ts = templateTs(moduleName);
 
@@ -88,13 +97,18 @@ export async function createLibrary(glob: string, options: Partial<Options>) {
 
     const uniqueModuleNames = [...new Set(moduleNames)];
     const index = uniqueModuleNames
-      .map((moduleName) => `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`)
+      .map(
+        (moduleName) =>
+          `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
+      )
       .join("");
 
     fs.writeFile(path.join(dir, "index.js"), index);
     fs.writeFile(path.join(dir, "index.d.ts"), index);
 
-    console.log(`⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`);
+    console.log(
+      `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`
+    );
 
     if (iconIndex) {
       fs.writeFile(
