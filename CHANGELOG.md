@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - capitalize character following `_`?
 - verbose: print out icon names -->
 
+## [0.10.0](https://github.com/metonym/svelvg/releases/tag/v0.10.0) - 2022-02-19
+
+- add `IconLibrary` Svelte component for searching the icon library
+
 ## [0.9.0](https://github.com/metonym/svelvg/releases/tag/v0.9.0) - 2022-02-19
 
 - switch library format to CJS only

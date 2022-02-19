@@ -109,6 +109,28 @@ Scaffold a new project using the [template](template):
 npx degit metonym/svelvg/template <folder-name>
 ```
 
+### `IconLibrary.svelte`
+
+`svelvg` exports an `IconLibrary.svelte` to make listing and searching icons easier.
+
+See [template/index.html](template/index.html) for an example.
+
+```html
+<script type="module">
+  import IconLibrary from "svelvg/lib/IconLibrary.svelte";
+  import * as icons from "./lib";
+  import pkg from "./package.json";
+
+  const app = new IconLibrary({
+    target: document.getElementById("svelte"),
+    props: {
+      pkg,
+      icons,
+    },
+  });
+</script>
+```
+
 ## License
 
 [MIT](LICENSE)
