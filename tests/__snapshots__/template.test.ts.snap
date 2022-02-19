@@ -1,0 +1,22 @@
+// Vitest Snapshot v1
+
+exports[`templateSvelte 1`] = `"<svg {...$$restProps}><slot /></svg>"`;
+
+exports[`templateSvelte 2`] = `"<svg id=\\"id\\" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
+
+exports[`templateSvelte 3`] = `"<svg class:my-class={true} id=\\"id\\" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
+
+exports[`templateTs 1`] = `
+"/// <reference types=\\"svelte\\" />
+import { SvelteComponentTyped } from \\"svelte\\";
+
+export interface IconNameProps
+  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap[\\"svg\\"]> {}
+
+export default class IconName extends SvelteComponentTyped<
+  IconNameProps,
+  {},
+  { default: {} }
+> {}
+"
+`;
