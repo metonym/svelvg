@@ -56,7 +56,7 @@ export const templateTs = (
 import { SvelteComponentTyped } from "svelte";
 
 export interface ${moduleName}Props
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["svg"]> {}
+  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
 
 export default class ${moduleName} extends SvelteComponentTyped<
   ${moduleName}Props,
