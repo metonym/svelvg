@@ -11,7 +11,7 @@ exports[`templateTs 1`] = `
 import { SvelteComponentTyped } from \\"svelte\\";
 
 export interface IconNameProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap[\\"svg\\"]> {}
+  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
 
 export default class IconName extends SvelteComponentTyped<
   IconNameProps,

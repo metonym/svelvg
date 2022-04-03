@@ -5,16 +5,10 @@ import { ghPages } from "vite-plugin-gh-pages";
 export default defineConfig({
   // replace with "npm-name"
   base: "/svelvg/",
-
-  plugins: [svelte({
-    compilerOptions: { immutable: true },
-    hot: !process.env.VITEST
-  }), ghPages()],
-
-  // remove this
-  server: {
-    fs: {
-      allow: ["../"],
-    },
-  },
+  plugins: [
+    svelte({
+      compilerOptions: { dev: false, immutable: true },
+    }),
+    ghPages(),
+  ],
 });
