@@ -15,11 +15,11 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "1.0.0-next.40",
-    "bootstrap-icons": "^1.8.1",
-    "svelvg": "^0.10.0",
-    "vite-plugin-gh-pages": "^0.1.0",
-    "vitest": "^0.8.3"
+    "@sveltejs/vite-plugin-svelte": "1.0.0-next.49",
+    "bootstrap-icons": "^1.8.3",
+    "svelvg": "^0.10.1",
+    "vite-plugin-gh-pages": "^0.2.0",
+    "vitest": "^0.15.1"
   },
   "repository": {
     "type": "git",
