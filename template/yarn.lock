@@ -669,10 +669,10 @@ universalify@^0.1.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 
-vite-plugin-gh-pages@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-gh-pages/-/vite-plugin-gh-pages-0.2.0.tgz#675ea6f84e3fd86fa6813e98c1c553ad487e7ac6"
-  integrity sha512-wnvBUNc8lZF9IFjBgRLFxqFrp68TAqZYPi2Y7YaVmjVjNmlYdfb/dh2GU4eASX/QvwiTCLfkC/7/AseGHBq6Mg==
+vite-plugin-gh-pages@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-gh-pages/-/vite-plugin-gh-pages-0.3.0.tgz#ff4fe28fc901464ef674176b5ab72f1516631893"
+  integrity sha512-nKS+YZsm4Lq3L10M77tmpkkKN2G+dFo3FpZaTsVWbCBh8EvQHIQZYhJNKI0a1kl1BQFBDEXyuNb13hqFkfEg/Q==
   dependencies:
     gh-pages "^4.0.0"
 
