@@ -14,7 +14,7 @@
       ? entries.filter(([icon]) =>
           icon
             .toLowerCase()
-            .includes(value.toLowerCase().replace(/(\s+|-)/, ""))
+            .includes(value.toLowerCase().replace(/(\s+|-)/g, ""))
         )
       : entries;
 </script>
