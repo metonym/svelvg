@@ -3,12 +3,5 @@ import { defineConfig } from "vite";
 import { ghPages } from "vite-plugin-gh-pages";
 
 export default defineConfig({
-  plugins: [
-    svelte({
-      compilerOptions: {
-        immutable: true
-      },
-    }),
-    ghPages(),
-  ],
+  plugins: [svelte(), ghPages()],
 });
