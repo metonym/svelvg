@@ -1,6 +1,7 @@
 <script>
   export let pkg = {
     name: "",
+    description: "",
   };
 
   export let icons = {};
@@ -20,6 +21,7 @@
 
 <svelte:head>
   <title>{pkg.name}</title>
+  <meta name="description" content={pkg.description} />
 </svelte:head>
 
 <main>
@@ -27,7 +29,12 @@
     {pkg.name}
   </h1>
 
-  <input type="search" placeholder="Search icons..." bind:value />
+  <input
+    type="search"
+    placeholder="Search icons..."
+    spellcheck="false"
+    bind:value
+  />
 
   <div>
     Showing {filtered.length} of {entries.length} total
