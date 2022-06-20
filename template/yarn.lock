@@ -621,17 +621,17 @@ svelte-hmr@^0.14.12:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.12.tgz#a127aec02f1896500b10148b2d4d21ddde39973f"
   integrity sha512-4QSW/VvXuqVcFZ+RhxiR8/newmwOCTlbYIezvkeN6302YFRE8cXy0naamHcjz8Y9Ce3ITTZtrHrIL0AGfyo61w==
 
-svelte@^3.46.4:
+svelte@^3.48.0:
   version "3.48.0"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.48.0.tgz#f98c866d45e155bad8e1e88f15f9c03cd28753d3"
   integrity sha512-fN2YRm/bGumvjUpu6yI3BpvZnpIm9I6A7HR4oUNYd7ggYyIwSA/BX7DJ+UXXffLp6XNcUijyLvttbPVCYa/3xQ==
 
-svelvg@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/svelvg/-/svelvg-0.10.1.tgz#0f8f7d87b9491ec3ab8f3e55621af05687a88c92"
-  integrity sha512-0bh6/Njm3v2JhteoNsiOj2Q9jy2SJYEdmH9CTUvA5fOtJ5ufxzJ3xwIFH+JB8OIr9FTCzLMb9x3DwiG+kp9U4g==
+svelvg@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/svelvg/-/svelvg-0.11.0.tgz#395ef937e1c2e6f1fa6f17143ef353cd9f54783b"
+  integrity sha512-g2crvh5NUZ9uzjJ35qfFj7sBThruRN/H+uRFZJrTUMgC1M14CJpOVUJQwT33EGqf4nfhEa/Fk+tf7n50/s14jg==
   dependencies:
-    svelte "^3.46.4"
+    svelte "^3.48.0"
     tiny-glob "^0.2.9"
 
 tiny-glob@^0.2.9:
