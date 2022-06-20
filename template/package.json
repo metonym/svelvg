@@ -1,5 +1,5 @@
 {
-  "name": "npm-name",
+  "name": "svelvg",
   "version": "0.1.0",
   "license": "MIT",
   "description": "lib-name SVG icons as Svelte components",
