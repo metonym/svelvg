@@ -4,6 +4,6 @@
     "build": "node build.js"
   },
   "devDependencies": {
-    "bootstrap-icons": "^1.5.0"
+    "bootstrap-icons": "^1.8.3"
   }
 }

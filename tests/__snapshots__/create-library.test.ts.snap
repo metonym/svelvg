@@ -3,17 +3,19 @@
 exports[`createIconIndex 1`] = `
 "# Icon Index
 
-> 2 total icons
+> 3 total icons
 
 ## Icons
 
 - OneTwoThree
 - TwoThreeFour
+- \\\\_123
 "
 `;
 
 exports[`createIndexFile 1`] = `
 "export { default as OneTwoThree } from \\"./OneTwoThree.svelte\\";
 export { default as TwoThreeFour } from \\"./TwoThreeFour.svelte\\";
+export { default as _123 } from \\"./_123.svelte\\";
 "
 `;
