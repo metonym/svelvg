@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div id="svelte"></div>
     <script type="module">
       import IconLibrary from "svelvg/lib/IconLibrary.svelte";
       import * as icons from "./lib";
       import pkg from "./package.json";
 
       const app = new IconLibrary({
-        target: document.getElementById("svelte"),
+        target: document.body,
         props: { pkg, icons },
       });
     </script>

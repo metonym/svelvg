@@ -1,7 +1,7 @@
 import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { defineConfig } from "vite";
 import { ghPages } from "vite-plugin-gh-pages";
 
-export default defineConfig({
+/** @type {import('vite').UserConfig} */
+export default {
   plugins: [svelte(), ghPages()],
-});
+};

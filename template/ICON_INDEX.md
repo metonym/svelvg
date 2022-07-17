@@ -1,6 +1,6 @@
 # Icon Index
 
-> 1805 total icons
+> 1811 total icons
 
 ## Icons
 
@@ -749,6 +749,8 @@
 - Eraser
 - Escape
 - Ethernet
+- EvStationFill
+- EvStation
 - ExclamationCircleFill
 - ExclamationCircle
 - ExclamationDiamondFill
@@ -986,6 +988,10 @@
 - ForwardFill
 - Forward
 - Front
+- FuelPumpDieselFill
+- FuelPumpDiesel
+- FuelPumpFill
+- FuelPump
 - FullscreenExit
 - Fullscreen
 - FunnelFill
