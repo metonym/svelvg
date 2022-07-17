@@ -53,7 +53,7 @@ export const templateSvelte = (
 export const templateTs = (
   moduleName: string
 ) => `/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
+import type { SvelteComponentTyped } from "svelte";
 
 export interface ${moduleName}Props
   extends svelte.JSX.SVGAttributes<SVGSVGElement> {}

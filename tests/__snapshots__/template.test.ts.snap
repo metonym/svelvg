@@ -8,7 +8,7 @@ exports[`templateSvelte 3`] = `"<svg class:my-class={true} id=\\"id\\" class:cla
 
 exports[`templateTs 1`] = `
 "/// <reference types=\\"svelte\\" />
-import { SvelteComponentTyped } from \\"svelte\\";
+import type { SvelteComponentTyped } from \\"svelte\\";
 
 export interface IconNameProps
   extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
