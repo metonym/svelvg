@@ -19,7 +19,7 @@
     "bootstrap-icons": "^1.9.1",
     "svelvg": "^0.11.2",
     "vite-plugin-gh-pages": "^0.3.0",
-    "vitest": "^0.18.1"
+    "vitest": "^0.21.1"
   },
   "repository": {
     "type": "git",
