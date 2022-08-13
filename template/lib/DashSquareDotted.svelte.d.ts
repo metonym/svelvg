@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface DashSquareDottedProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class DashSquareDotted extends SvelteComponentTyped<
-  DashSquareDottedProps,
-  {},
-  { default: {} }
-> {}
+export { DashSquareDotted as default } from "./";

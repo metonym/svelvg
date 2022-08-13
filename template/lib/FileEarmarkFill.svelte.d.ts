@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface FileEarmarkFillProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class FileEarmarkFill extends SvelteComponentTyped<
-  FileEarmarkFillProps,
-  {},
-  { default: {} }
-> {}
+export { FileEarmarkFill as default } from "./";

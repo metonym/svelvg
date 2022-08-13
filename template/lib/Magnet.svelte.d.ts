@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface MagnetProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class Magnet extends SvelteComponentTyped<
-  MagnetProps,
-  {},
-  { default: {} }
-> {}
+export { Magnet as default } from "./";

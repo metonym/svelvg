@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface HeartsProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class Hearts extends SvelteComponentTyped<
-  HeartsProps,
-  {},
-  { default: {} }
-> {}
+export { Hearts as default } from "./";

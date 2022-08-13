@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface PlayCircleProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class PlayCircle extends SvelteComponentTyped<
-  PlayCircleProps,
-  {},
-  { default: {} }
-> {}
+export { PlayCircle as default } from "./";

@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface Mailbox2Props
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class Mailbox2 extends SvelteComponentTyped<
-  Mailbox2Props,
-  {},
-  { default: {} }
-> {}
+export { Mailbox2 as default } from "./";

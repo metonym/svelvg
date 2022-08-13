@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface EnvelopeOpenFillProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class EnvelopeOpenFill extends SvelteComponentTyped<
-  EnvelopeOpenFillProps,
-  {},
-  { default: {} }
-> {}
+export { EnvelopeOpenFill as default } from "./";

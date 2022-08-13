@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface InputCursorProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class InputCursor extends SvelteComponentTyped<
-  InputCursorProps,
-  {},
-  { default: {} }
-> {}
+export { InputCursor as default } from "./";

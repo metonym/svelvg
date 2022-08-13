@@ -1,11 +1,1 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
-
-export interface ClipboardHeartProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class ClipboardHeart extends SvelteComponentTyped<
-  ClipboardHeartProps,
-  {},
-  { default: {} }
-> {}
+export { ClipboardHeart as default } from "./";
