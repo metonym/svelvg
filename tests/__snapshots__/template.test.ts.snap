@@ -7,16 +7,6 @@ exports[`templateSvelte 2`] = `"<svg id=\\"id\\" class:class={true} {...$$restPr
 exports[`templateSvelte 3`] = `"<svg class:my-class={true} id=\\"id\\" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
 
 exports[`templateTs 1`] = `
-"/// <reference types=\\"svelte\\" />
-import type { SvelteComponentTyped } from \\"svelte\\";
-
-export interface IconNameProps
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class IconName extends SvelteComponentTyped<
-  IconNameProps,
-  {},
-  { default: {} }
-> {}
+"export { IconName as default } from \\"./\\";
 "
 `;

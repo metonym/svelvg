@@ -50,17 +50,5 @@ export const templateSvelte = (
   return `<svg${svg_attributes} {...$$restProps}><slot />${svg_children.trim()}</svg>`;
 };
 
-export const templateTs = (
-  moduleName: string
-) => `/// <reference types="svelte" />
-import type { SvelteComponentTyped } from "svelte";
-
-export interface ${moduleName}Props
-  extends svelte.JSX.SVGAttributes<SVGSVGElement> {}
-
-export default class ${moduleName} extends SvelteComponentTyped<
-  ${moduleName}Props,
-  {},
-  { default: {} }
-> {}
-`;
+export const templateTs = (moduleName: string) =>
+  `export { ${moduleName} as default } from "./";\n`;

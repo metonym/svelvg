@@ -133,9 +133,20 @@ export async function createLibrary(
 
     const uniqueModuleNames = [...new Set(moduleNames)];
     const index = createIndexFile(uniqueModuleNames);
+    const indexTypes = `import type { SvelteComponentTyped } from "svelte";
+
+declare class SvgComponent extends SvelteComponentTyped<
+  svelte.JSX.SVGProps<SVGSVGElement>,
+  {},
+  { default: {} }
+  > {}
+
+${uniqueModuleNames
+  .map((moduleName) => `export const ${moduleName}: typeof SvgComponent;`)
+  .join("\n")}\n`;
 
     fs.writeFile(path.join(dir, "index.js"), index);
-    fs.writeFile(path.join(dir, "index.d.ts"), index);
+    fs.writeFile(path.join(dir, "index.d.ts"), indexTypes);
 
     console.log(
       `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`
