@@ -10,7 +10,7 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@sveltejs/vite-plugin-svelte@1.0.8":
+"@sveltejs/vite-plugin-svelte@^1.0.8":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.8.tgz#a8ebf58d3efc7bdb9eb8692ef3d78fdc39a6baa8"
   integrity sha512-1xkVTB4pm6zuign858FzVYE9Fdw9MQBOlxrdd85STV0NvTDmcofcRpcrK+zcIyT8SZ2dseHLu8hvDwzssF6RfA==
@@ -372,17 +372,17 @@ svelte-hmr@^0.15.0:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.15.0.tgz#c8304b5dd33f006415329d91470761d19417a324"
   integrity sha512-Aw21SsyoohyVn4yiKXWPNCSW2DQNH/76kvUnE9kpt4h9hcg9tfyQc6xshx9hzgMfGF0kVx0EGD8oBMWSnATeOg==
 
-svelte@^3.48.0:
-  version "3.48.0"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.48.0.tgz#f98c866d45e155bad8e1e88f15f9c03cd28753d3"
-  integrity sha512-fN2YRm/bGumvjUpu6yI3BpvZnpIm9I6A7HR4oUNYd7ggYyIwSA/BX7DJ+UXXffLp6XNcUijyLvttbPVCYa/3xQ==
+svelte@^3.50.1:
+  version "3.50.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.50.1.tgz#b35fbc5e79ddd71e8bb27c3149ee6ff903841239"
+  integrity sha512-bS4odcsdj5D5jEg6riZuMg5NKelzPtmsCbD9RG+8umU03TeNkdWnP6pqbCm0s8UQNBkqk29w/Bdubn3C+HWSwA==
 
-svelvg@^0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/svelvg/-/svelvg-0.11.2.tgz#6591c9e7d3d336da23428919a0ce34f4630965c0"
-  integrity sha512-RhWjAfKHZztcld/mUuHef/ckCrT3ZQbORyjbVMDlhNvOmmstH0bBlzEPVMOi8vKdvtdUm0KXPSRV693VWMSjzw==
+svelvg@^0.11.3:
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/svelvg/-/svelvg-0.11.3.tgz#63905c76d5a4296866c041f1ea1546ea4666728c"
+  integrity sha512-E56Fv4D1+noE9q4wCEGElRXhpFV1pgsXbVO2vNSOuldDtYnere2fMJ5J5L+Zb7qu5nYM9u/7rwZ1/CGlb2rzmQ==
   dependencies:
-    svelte "^3.48.0"
+    svelte "^3.50.1"
     tiny-glob "^0.2.9"
 
 tiny-glob@^0.2.9:
