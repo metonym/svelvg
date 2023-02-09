@@ -81,7 +81,7 @@ export async function createLibrary(
     libPath = path.join("node_modules", glob);
   }
 
-  if (!/\*.svg$/.test(libPath)) {
+  if (!/\*\.svg$/.test(libPath)) {
     libPath = path.join(libPath, "*.svg");
   }
 
@@ -102,7 +102,7 @@ export async function createLibrary(
     }
     await fs.mkdir(dir);
 
-    const files = await tg(libPath.replace(/\*.svg$/, "**/*.svg"));
+    const files = await tg(libPath.replace(/\*\.svg$/, "**/*.svg"));
     const moduleNames: ModuleNames = [];
 
     for (const filename of files) {
