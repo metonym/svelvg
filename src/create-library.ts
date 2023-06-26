@@ -133,10 +133,10 @@ export async function createLibrary(
 
     const uniqueModuleNames = [...new Set(moduleNames)];
     const index = createIndexFile(uniqueModuleNames);
-    const indexTypes = `import type { SvelteComponent } from "svelte";
+    const indexTypes = `import type { SvelteComponentTyped } from "svelte";
 import type { SVGAttributes } from "svelte/elements";
 
-declare class SvgComponent extends SvelteComponent<
+declare class SvgComponent extends SvelteComponentTyped<
   SVGAttributes<SVGSVGElement> & {
     // Support data-* attributes in Svelte 3
     [key: \`data-\${string}\`]: any;
