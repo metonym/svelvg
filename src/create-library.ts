@@ -1,7 +1,7 @@
-import tg from "tiny-glob";
-import fs from "fs/promises";
 import { existsSync } from "fs";
+import fs from "fs/promises";
 import path from "path";
+import tg from "tiny-glob";
 import { templateSvelte, templateTs } from "./template";
 import { toModuleName } from "./to-module-name";
 
@@ -133,13 +133,17 @@ export async function createLibrary(
 
     const uniqueModuleNames = [...new Set(moduleNames)];
     const index = createIndexFile(uniqueModuleNames);
-    const indexTypes = `import type { SvelteComponentTyped } from "svelte";
+    const indexTypes = `import type { SvelteComponent } from "svelte";
+import type { SVGAttributes } from "svelte/elements";
 
-declare class SvgComponent extends SvelteComponentTyped<
-  svelte.JSX.SVGProps<SVGSVGElement>,
-  {},
+declare class SvgComponent extends SvelteComponent<
+  SVGAttributes<SVGSVGElement> & {
+    // Support data-* attributes in Svelte 3
+    [key: \`data-\${string}\`]: any;
+  },
+  Record<string, any>,
   { default: {} }
-  > {}
+> {}
 
 ${uniqueModuleNames
   .map((moduleName) => `export const ${moduleName}: typeof SvgComponent;`)

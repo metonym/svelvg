@@ -16,7 +16,7 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
-    "svelte": "^3.52.0",
+    "svelte": "^3.59.1",
     "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
