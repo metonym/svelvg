@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - capitalize character following `_`?
 - verbose: print out icon names -->
 
+## [0.12.0](https://github.com/metonym/svelvg/releases/tag/v0.12.0) - 2023-06-25
+
+**Breaking Changes**
+
+- update generated types to support Svelte 4, while still supporting Svelte version >=3.55
+
 ## [0.11.4](https://github.com/metonym/svelvg/releases/tag/v0.11.4) - 2023-02-09
 
 - escape file extension regex for Windows

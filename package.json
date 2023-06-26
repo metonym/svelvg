@@ -1,6 +1,6 @@
 {
   "name": "svelvg",
-  "version": "0.11.4",
+  "version": "0.12.0",
   "license": "MIT",
   "description": "Convert SVG files into Svelte components with TypeScript definitions",
   "author": "Eric Liu (https://github.com/metonym)",
