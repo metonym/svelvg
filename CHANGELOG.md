@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - capitalize character following `_`?
 - verbose: print out icon names -->
 
+## [0.12.2](https://github.com/metonym/svelvg/releases/tag/v0.12.2) - 2024-06-19
+
+- `createLibrary` options should be optional
+- `createLibrary` should alphabetize module names
+
 ## [0.12.1](https://github.com/metonym/svelvg/releases/tag/v0.12.1) - 2023-06-25
 
 - revert back to using `SvelteComponentTyped`, since `SvelteComponent` cannot be used in Svelte 3
