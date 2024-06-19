@@ -1,4 +1,3 @@
-import { test, expect } from "vitest";
 import { templateSvelte, templateTs } from "../src/template";
 
 test("templateSvelte", () => {
@@ -6,19 +5,19 @@ test("templateSvelte", () => {
     {
       name: "Element only",
       source: `<svg></svg>`,
-      filename: undefined,
+      filename: "",
       classes: [],
     },
     {
       name: "With attributes and children",
       source: `<svg id="id" class="class"><title>Title</title></svg>`,
-      filename: undefined,
+      filename: "",
       classes: [],
     },
     {
       name: "With classes",
       source: `<svg id="id" class="class"><title>Title</title></svg>`,
-      filename: undefined,
+      filename: "",
       classes: ["my-class"],
     },
   ].forEach(({ source, filename, classes }) => {

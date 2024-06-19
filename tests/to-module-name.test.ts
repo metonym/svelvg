@@ -1,4 +1,3 @@
-import { test, expect } from "vitest";
 import { toModuleName } from "../src/to-module-name";
 
 test("toModuleName", () => {
