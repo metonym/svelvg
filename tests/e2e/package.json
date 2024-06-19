@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "bun build.js"
+    "build": "bun build.ts"
   },
   "devDependencies": {
     "bootstrap-icons": "^1.8.3",
