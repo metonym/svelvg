@@ -12,13 +12,12 @@
     "dev": "vite",
     "build": "vite build --base=/svelvg/",
     "prepack": "svelvg glob=bootstrap-icons/icons iconIndex",
-    "test": "vitest"
+    "test": "bun test"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.9",
     "bootstrap-icons": "^1.9.1",
-    "svelvg": "^0.11.3",
-    "vitest": "^0.24.3"
+    "svelvg": "^0.11.3"
   },
   "repository": {
     "type": "git",
