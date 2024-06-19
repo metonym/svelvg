@@ -1,6 +1,6 @@
-import { existsSync } from "fs";
-import fs from "fs/promises";
-import path from "path";
+import { existsSync } from "node:fs";
+import fs from "node:fs/promises";
+import path from "node:path";
 import tg from "tiny-glob";
 import { templateSvelte, templateTs } from "./template";
 import { toModuleName } from "./to-module-name";
@@ -63,7 +63,7 @@ ${moduleNames
 
 export async function createLibrary(
   glob: string,
-  options: Partial<CreateLibraryOptions>
+  options?: Partial<CreateLibraryOptions>
 ) {
   const outDir = options?.outDir ?? "lib";
 
