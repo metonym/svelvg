@@ -1,12 +1,12 @@
-// Vitest Snapshot v1
+// Bun Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`templateSvelte 1`] = `"<svg {...$$restProps}><slot /></svg>"`;
 
-exports[`templateSvelte 2`] = `"<svg id=\\"id\\" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
+exports[`templateSvelte 2`] = `"<svg id="id" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
 
-exports[`templateSvelte 3`] = `"<svg class:my-class={true} id=\\"id\\" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
+exports[`templateSvelte 3`] = `"<svg class:my-class={true} id="id" class:class={true} {...$$restProps}><slot /><title>Title</title></svg>"`;
 
 exports[`templateTs 1`] = `
-"export { IconName as default } from \\"./\\";
+"export { IconName as default } from "./";
 "
 `;
