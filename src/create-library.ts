@@ -131,7 +131,7 @@ export async function createLibrary(
       moduleNames.push(moduleName);
     }
 
-    const uniqueModuleNames = [...new Set(moduleNames)];
+    const uniqueModuleNames = [...new Set(moduleNames.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())))];
     const index = createIndexFile(uniqueModuleNames);
     const indexTypes = `import type { SvelteComponentTyped } from "svelte";
 import type { SVGAttributes } from "svelte/elements";
