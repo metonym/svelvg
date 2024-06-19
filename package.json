@@ -11,18 +11,19 @@
   },
   "scripts": {
     "dev": "tsc -w",
-    "prepack": "tsc",
-    "test": "vitest -r tests",
-    "format": "prettier --ignore-path .gitignore --write ."
+    "build": "tsc",
+    "test": "bun test tests",
+    "format": "bun --bun prettier --ignore-path .gitignore --write .  --cache"
   },
   "dependencies": {
-    "svelte": "^3.59.1",
+    "svelte": "^3.59.2",
     "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4",
-    "vitest": "^0.24.3"
+    "@types/bun": "^1.1.4",
+    "@types/jest": "^29.5.12",
+    "prettier": "^2.8.8",
+    "typescript": "^4.9.5"
   },
   "repository": {
     "type": "git",
