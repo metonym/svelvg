@@ -5,7 +5,7 @@ declare class SvgComponent extends SvelteComponentTyped<
   svelte.JSX.SVGProps<SVGSVGElement>,
   {},
   { default: {} }
-  > {}
+> {}
 
 export const _1CircleFill: typeof SvgComponent;
 export const _1Circle: typeof SvgComponent;
