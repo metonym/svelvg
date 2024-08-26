@@ -1,19 +1,5 @@
-import { parse, walk } from "svelte/compiler";
-
-interface Position {
-  start: number;
-  end: number;
-}
-
-interface NodeElement extends Position {
-  type: "Element";
-  name: string;
-  children: Position[];
-  attributes: {
-    name: string;
-    value: { raw: any }[];
-  }[];
-}
+import { parse } from "svelte/compiler";
+import { walk } from "estree-walker";
 
 export const templateSvelte = (
   source: string,
@@ -27,10 +13,10 @@ export const templateSvelte = (
 
   classes.forEach((name) => (svg_attributes += ` class:${name}={true}`));
 
-  walk(ast.html, {
-    enter(node: NodeElement) {
+  walk(ast, {
+    enter(node) {
       if (node.type === "Element" && node.name === "svg") {
-        node.children.forEach((child) => {
+        node.children?.forEach((child) => {
           svg_children += source.slice(child.start, child.end);
         });
 

@@ -10,12 +10,13 @@
     "svelvg": "cli.js"
   },
   "scripts": {
-    "dev": "tsc -w",
-    "build": "tsc",
+    "dev": "bun --bun tsc -w",
+    "build": "bun --bun tsc",
     "test": "bun test tests",
     "format": "bun --bun prettier --ignore-path .gitignore --write .  --cache"
   },
   "dependencies": {
+    "estree-walker": "^2.0.2",
     "svelte": "^4.2.19",
     "tiny-glob": "^0.2.9"
   },
