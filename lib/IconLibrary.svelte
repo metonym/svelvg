@@ -96,6 +96,7 @@
   }
 
   li div {
+    word-wrap: break-word;
     margin-bottom: 0.75rem;
   }
 </style>
