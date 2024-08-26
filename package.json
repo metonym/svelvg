@@ -7,7 +7,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "svelvg": "./cli.js"
+    "svelvg": "cli.js"
   },
   "scripts": {
     "dev": "tsc -w",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metonym/svelvg"
+    "url": "git+https://github.com/metonym/svelvg.git"
   },
   "homepage": "https://github.com/metonym/svelvg",
   "bugs": "https://github.com/metonym/svelvg/issues",
