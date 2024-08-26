@@ -15,13 +15,15 @@
     "test": "bun test"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.9",
-    "bootstrap-icons": "^1.9.1",
-    "svelvg": "^0.11.3"
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "bootstrap-icons": "^1.11.3",
+    "svelte": "^4.2.19",
+    "svelvg": "^0.12.2",
+    "vite": "^5.4.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metonym/npm-name.git"
+    "url": "git+https://github.com/metonym/npm-name.git"
   },
   "homepage": "https://github.com/metonym/npm-name",
   "bugs": "https://github.com/metonym/npm-name/issues",

@@ -15,15 +15,17 @@
 ## Installation
 
 ```bash
-# Yarn
-yarn add -D npm-name
-
 # NPM
 npm i -D npm-name
 
 # pnpm
 pnpm i -D npm-name
 
+# Bun
+bun add -D npm-name
+
+# Yarn
+yarn add -D npm-name
 ```
 
 ## Usage
