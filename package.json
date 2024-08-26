@@ -16,14 +16,14 @@
     "format": "bun --bun prettier --ignore-path .gitignore --write .  --cache"
   },
   "dependencies": {
-    "svelte": "^3.59.2",
+    "svelte": "^4.2.19",
     "tiny-glob": "^0.2.9"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.4",
-    "@types/jest": "^29.5.12",
-    "prettier": "^2.8.8",
-    "typescript": "^4.9.5"
+    "@types/bun": "latest",
+    "@types/jest": "latest",
+    "prettier": "latest",
+    "typescript": "latest"
   },
   "repository": {
     "type": "git",
