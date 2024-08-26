@@ -18,7 +18,7 @@ interface NodeElement extends Position {
 export const templateSvelte = (
   source: string,
   filename: string,
-  { classes }: { classes: string[] }
+  { classes }: { classes: string[] },
 ) => {
   const ast = parse(source, { filename });
 
