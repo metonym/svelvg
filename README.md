@@ -50,14 +50,17 @@ npx svelvg glob=bootstrap-icons/icons iconIndex=ICONS.md
 Alternatively, install `svelvg` from NPM to use it programmatically.
 
 ```sh
-# Yarn
-yarn add -D svelvg
-
 # NPM
 npm i -D svelvg
 
 # pnpm
 pnpm i -D svelvg
+
+# Bun
+bun add -D svelvg
+
+# Yarn
+yarn add -D svelvg
 ```
 
 Note that the top-level await requires Node.js v14 or greater.
