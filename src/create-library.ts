@@ -21,7 +21,7 @@ interface CreateLibraryOptions {
    */
   appendClassNames: (
     filename: string,
-    moduleName: string
+    moduleName: string,
   ) => undefined | string[];
 
   /**
@@ -39,7 +39,7 @@ export const createIndexFile = (moduleNames: ModuleNames) =>
   moduleNames
     .map(
       (moduleName) =>
-        `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`
+        `export { default as ${moduleName} } from "./${moduleName}.svelte";\n`,
     )
     .join("");
 
@@ -63,7 +63,7 @@ ${moduleNames
 
 export async function createLibrary(
   glob: string,
-  options?: Partial<CreateLibraryOptions>
+  options?: Partial<CreateLibraryOptions>,
 ) {
   const outDir = options?.outDir ?? "lib";
 
@@ -121,17 +121,23 @@ export async function createLibrary(
 
       fs.writeFile(
         path.join(dir, `${moduleName}.svelte`),
-        templateSvelte(source, filename, { classes })
+        templateSvelte(source, filename, { classes }),
       );
       fs.writeFile(
         path.join(dir, `${moduleName}.svelte.d.ts`),
-        templateTs(moduleName)
+        templateTs(moduleName),
       );
 
       moduleNames.push(moduleName);
     }
 
-    const uniqueModuleNames = [...new Set(moduleNames.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())))];
+    const uniqueModuleNames = [
+      ...new Set(
+        moduleNames.sort((a, b) =>
+          a.toLowerCase().localeCompare(b.toLowerCase()),
+        ),
+      ),
+    ];
     const index = createIndexFile(uniqueModuleNames);
     const indexTypes = `import type { SvelteComponentTyped } from "svelte";
 import type { SVGAttributes } from "svelte/elements";
@@ -153,13 +159,13 @@ ${uniqueModuleNames
     fs.writeFile(path.join(dir, "index.d.ts"), indexTypes);
 
     console.log(
-      `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`
+      `⚡ Converted ${uniqueModuleNames.length} icons from "${glob}" to Svelte components in "${outDir}"`,
     );
 
     if (iconIndex) {
       fs.writeFile(
         path.join(process.cwd(), iconIndex),
-        createIconIndex(uniqueModuleNames)
+        createIconIndex(uniqueModuleNames),
       );
 
       console.log(`✏️ Wrote icon index to "${iconIndex}"`);
