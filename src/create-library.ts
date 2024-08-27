@@ -5,7 +5,7 @@ import tg from "tiny-glob";
 import { templateSvelte, templateTs } from "./template";
 import { toModuleName } from "./to-module-name";
 
-interface CreateLibraryOptions {
+type CreateLibraryOptions = {
   /** @default "lib" */
   outDir: string;
 
@@ -31,7 +31,7 @@ interface CreateLibraryOptions {
     path: path.ParsedPath;
     moduleName: string;
   }) => string;
-}
+};
 
 type ModuleNames = string[];
 
