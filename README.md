@@ -45,7 +45,7 @@ Customize the icon index file name like so:
 npx svelvg glob=bootstrap-icons/icons iconIndex=ICONS.md
 ```
 
-### Node.js
+### Programmatic usage
 
 Alternatively, install `svelvg` from NPM to use it programmatically.
 
@@ -63,16 +63,15 @@ bun add -D svelvg
 yarn add -D svelvg
 ```
 
-Note that the top-level await requires Node.js v14 or greater.
-
 ```js
-const svelvg = require("svelvg");
+import { createLibrary } from "svelvg";
 
-// Emits components to the `lib` folder
-svelvg.createLibrary("bootstrap-icons/icons");
+// Generate Svelte components from SVG files in `node_modules/bootstrap-icons/icons`.
+// By default, output is emitted to the `lib` directory.
+createLibrary("bootstrap-icons/icons");
 
-// Customize the output directory to be `dist`
-svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
+// Customize the output directory to `dist`.
+createLibrary("bootstrap-icons/icons", { outDir: "dist" });
 ```
 
 ### API
@@ -80,7 +79,7 @@ svelvg.createLibrary("bootstrap-icons/icons", { outDir: "dist" });
 #### `createLibrary`
 
 ```ts
-interface CreateLibraryOptions {
+type CreateLibraryOptions = {
   /** @default "lib" */
   outDir: string;
 
@@ -103,7 +102,7 @@ interface CreateLibraryOptions {
     path: path.ParsedPath;
     moduleName: string;
   }) => string;
-}
+};
 ```
 
 ## Template
